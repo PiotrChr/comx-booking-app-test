@@ -27,7 +27,5 @@ CREATE TABLE IF NOT EXISTS bookings (
     booked_from DATETIME NOT NULL,
     booked_until DATETIME NOT NULL,
     date_created DATETIME NOT NULL,
-    PRIMARY KEY(id)
-    FOREIGN_KEY(user_id) REFERENCES users (id)
-
+    PRIMARY KEY (id)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE 'utf8mb4_unicode_ci' ENGINE = InnoDB;

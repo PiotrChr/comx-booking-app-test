@@ -1,7 +1,7 @@
 import { AbstractMysqlStorage } from './abstractMysqlStorage'
-const config = require('config')
+import { getEnv } from '../utils/env'
 
-const OFFICE = config.util.getEnv('DB_NAME') + '.office'
+const OFFICE = getEnv('DB_NAME') + '.office'
 
 export default class OfficeStorage extends AbstractMysqlStorage {
   

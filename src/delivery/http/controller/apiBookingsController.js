@@ -25,6 +25,25 @@ export const findAllByUser = async (req, res) => {
   }
 }
 
+export const findAllByEntity = async (req, res) => {
+  const errors = validationResult(req)
+
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() })
+  }
+
+  const entity_type = req.params.entity_type
+  const entity_id = req.params.entity_id
+
+  try {
+    const result = await bookingsRepository.findByEntity({entity_type, entity_id})
+
+    res.send(result)
+  } catch (error) {
+    res.send(error.message)
+  }
+}
+
 export const createNewBooking = async (req, res) => {
     const errors = validationResult(req)
 

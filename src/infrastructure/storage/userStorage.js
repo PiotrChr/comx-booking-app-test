@@ -1,7 +1,7 @@
 import { AbstractMysqlStorage } from './abstractMysqlStorage'
-const config = require('config')
+import { getEnv } from '../utils/env'
 
-const USERS = config.util.getEnv('DB_NAME') + '.users'
+const USERS = getEnv('DB_NAME') + '.user'
 
 export default class UserStorage extends AbstractMysqlStorage {
   constructor() {

@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({path: '.env'})
 
 import express from 'express'
 import cors from 'cors'
@@ -10,7 +10,8 @@ const app = express();
 const port = 8000
 
 const allowedOrigins = [
-  'http://localhost:8080',
+  'http://127.0.0.1:8080',
+  'http://127.0.0.1:5001'
 ]
 
 app.use(

@@ -5,7 +5,9 @@ import { check } from 'express-validator'
 
 bookingsRouter.get('/', Controller.apiBookingsController.findAll)
 
-bookingsRouter.get('/:user_id', Controller.apiBookingsController.findAllByUser)
+// bookingsRouter.get('/:user_id', Controller.apiBookingsController.findAllByUser)
+
+bookingsRouter.get('/:entity_type/:entity_id', Controller.apiBookingsController.findAllByEntity)
 
 bookingsRouter.post(
   '/',
