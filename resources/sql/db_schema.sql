@@ -1,0 +1,33 @@
+use 'comx_booking_app';
+
+CREATE TABLE IF NOT EXISTS user (
+    id INT AUTO_INCREMENT NOT NULL,
+    username VARCHAR(180) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE 'utf8mb4_unicode_ci' ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS car (
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(180) NOT NULL,
+    PRIMARY KEY(id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE 'utf8mb4_unicode_ci' ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS office (
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(180) NOT NULL,
+    PRIMARY KEY(id)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE 'utf8mb4_unicode_ci' ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS bookings (
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT NOT NULL,
+    entity_type VARCHAR(30) NOT NULL,
+    entity_id INT NOT NULL,
+    booked_from DATETIME NOT NULL,
+    booked_until DATETIME NOT NULL,
+    date_created DATETIME NOT NULL,
+    PRIMARY KEY(id)
+    FOREIGN_KEY(user_id) REFERENCES users (id)
+
+) DEFAULT CHARACTER SET utf8mb4 COLLATE 'utf8mb4_unicode_ci' ENGINE = InnoDB;
