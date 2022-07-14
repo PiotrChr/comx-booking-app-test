@@ -1,8 +1,8 @@
-const userRouter = require('express').Router({ mergeParams: true })
-import * as Controller from '../../http/controller'
+import { check } from 'express-validator';
+import * as Controller from '../../http/controller';
 
-import { check } from 'express-validator'
+const userRouter = require('express').Router({ mergeParams: true });
 
-userRouter.get('/', Controller.apiUserController.getAll)
+userRouter.get('/', Controller.apiUserController.getAll);
 
-export default userRouter
+export default userRouter;

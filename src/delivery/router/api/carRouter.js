@@ -1,8 +1,8 @@
-import * as Controller from '../../http/controller'
-import { body } from 'express-validator'
+import { body } from 'express-validator';
+import * as Controller from '../../http/controller';
 
-const carRouter = require('express').Router({ mergeParams: true })
+const carRouter = require('express').Router({ mergeParams: true });
 
-carRouter.get('/', Controller.apiCarController.findAll)
+carRouter.get('/', Controller.apiCarController.findAll);
 
-export default carRouter
+export default carRouter;

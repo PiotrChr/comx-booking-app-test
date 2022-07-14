@@ -1,14 +1,12 @@
-import OfficeStorage from '../storage/officeStorage'
+import OfficeStorage from '../storage/officeStorage';
 // import { validate } from '../../delivery/http/validator'
 
-const storage = new OfficeStorage()
+const storage = new OfficeStorage();
 
-export const findAll = async (props) => {
+export const findAll = async (props) =>
 //   validate('userFindAll', findAllProps) // TODO: Move validator to Controller
-  return storage.officeFindAll(props)
-}
+  storage.officeFindAll(props);
 
-export const findById = async (props) => {
+export const findById = async (props) =>
 //   validate('userFindById', findByIdProps)  // TODO: Move validator to Controller
-  return storage.officeFindById(props)
-}
+  storage.officeFindById(props);

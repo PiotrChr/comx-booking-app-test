@@ -1,12 +1,11 @@
-import mysql from 'mysql2'
-import { Pool } from 'mysql'
-import { ProviderError } from './Error/ProviderError'
-import { getEnv } from '../utils/env'
+import mysql from 'mysql2';
+import { Pool } from 'mysql';
+import { ProviderError } from './Error/ProviderError';
+import { getEnv } from '../utils/env';
 
+let pool = null;
 
-let pool = null
-
-console.log(getEnv('DB_HOST'))
+console.log(getEnv('DB_HOST'));
 
 export const createPool = () => {
   if (!pool) {
@@ -16,12 +15,12 @@ export const createPool = () => {
         host: getEnv('DB_HOST'),
         user: getEnv('DB_USER'),
         password: getEnv('DB_PASS'),
-        database: getEnv('DB_NAME')
-      })
+        database: getEnv('DB_NAME'),
+      });
     } catch (error) {
-      throw new ProviderError()
+      throw new ProviderError();
     }
   }
 
-  return pool
-}
+  return pool;
+};

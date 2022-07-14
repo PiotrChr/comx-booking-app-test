@@ -1,24 +1,20 @@
-import UserStorage from '../storage/userStorage'
+import UserStorage from '../storage/userStorage';
 // import { validate } from '../../delivery/http/validator'
 
-const storage = new UserStorage()
+const storage = new UserStorage();
 
-export const findAll = async (props) => {
+export const findAll = async (props) =>
 //   validate('userFindAll', findAllProps) // TODO: Move validator to Controller
-  return storage.userFindAll(props)
-}
+  storage.userFindAll(props);
 
-export const findById = async (props) => {
+export const findById = async (props) =>
 //   validate('userFindById', findByIdProps)  // TODO: Move validator to Controller
-  return storage.userFindById(props)
-}
+  storage.userFindById(props);
 
-export const findByName = async (props) => {
+export const findByName = async (props) =>
 //   validate('userFindByName', findByNameProps)  // TODO: Move validator to Controller
-  return storage.userFindByName(props)
-}
+  storage.userFindByName(props);
 
-export const addUser = async (props) => {
+export const addUser = async (props) =>
 //   validate('addUser', addUserProps)  // TODO: Move validator to Controller
-  return storage.addUser(props)
-}
+  storage.addUser(props);

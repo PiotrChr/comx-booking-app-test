@@ -1,8 +1,8 @@
-import * as Controller from '../../http/controller'
-import { body } from 'express-validator'
+import { body } from 'express-validator';
+import * as Controller from '../../http/controller';
 
-const officeRouter = require('express').Router({ mergeParams: true })
+const officeRouter = require('express').Router({ mergeParams: true });
 
-officeRouter.get('/', Controller.apiOfficeController.findAll)
+officeRouter.get('/', Controller.apiOfficeController.findAll);
 
-export default officeRouter
+export default officeRouter;

@@ -1,14 +1,12 @@
-import CarStorage from '../storage/carStorage'
+import CarStorage from '../storage/carStorage';
 // import { validate } from '../../delivery/http/validator'
 
-const storage = new CarStorage()
+const storage = new CarStorage();
 
-export const findAll = async (props) => {
+export const findAll = async (props) =>
 //   validate('userFindAll', findAllProps) // TODO: Move validator to Controller
-  return storage.carFindAll(props)
-}
+  storage.carFindAll(props);
 
-export const findById = async (props) => {
+export const findById = async (props) =>
 //   validate('userFindById', findByIdProps)  // TODO: Move validator to Controller
-  return storage.carFindById(props)
-}
+  storage.carFindById(props);
