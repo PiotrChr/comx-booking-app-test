@@ -1,7 +1,7 @@
 import { AbstractMysqlStorage } from './abstractMysqlStorage'
 import { getEnv } from '../utils/env'
 
-const CAR = getEnv('DB_NAME') + '.office'
+const CAR = getEnv('DB_NAME') + '.car'
 
 export default class CarStorage extends AbstractMysqlStorage {
   
